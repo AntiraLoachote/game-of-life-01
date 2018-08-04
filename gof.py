@@ -20,10 +20,19 @@ INITIAL_BOARD = {
 
 
 def get_neighbors_of(cell):
-    """
-    Return the neighbors of cell.
-    """
-    return 1
+    x, y = cell
+    topleft = (x-1,y-1)
+    topmid = (x-1,y+0)
+    topright = (x-1,y+1)
+    midleft = (x+0,y-1)
+    midright =(x+0,y+1)
+    bottomleft =(x+1,y-1)
+    bottommid =(x+1,y+0)
+    bottomright=(x+1,y+1)
+    neighbors = {topleft,topmid,topright,
+                midleft,midright,
+                bottomleft,bottommid,bottomright}
+    return neighbors
 
 
 def advance(board):
