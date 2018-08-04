@@ -34,6 +34,20 @@ def get_neighbors_of(cell):
                 bottomleft,bottommid,bottomright}
     return neighbors
 
+def over3_neighbors_die(board, cell):
+    neighbors = 0
+    count = 0
+    neighbor_cells = get_neighbors_of(cell)
+    for item in board:
+        if item in neighbor_cells:
+            count += 1
+
+    if count > 3:
+        board.remove(cell)
+
+    return board
+
+
 
 def advance(board):
     """
